@@ -1,7 +1,19 @@
-import About from "./pages/About";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Login from "./pages/Login";
+import JobDetails from "./pages/JobDetails";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
-    return <About />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/jobs" element={<JobDetails />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
